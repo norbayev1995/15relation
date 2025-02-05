@@ -78,13 +78,4 @@ class PostController extends Controller
         $post->save();
         return redirect()->route('index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Post $post)
-    {
-        $post->delete();
-        return redirect()->route('index');
-    }
 }

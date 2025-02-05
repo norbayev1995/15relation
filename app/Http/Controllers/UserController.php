@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,14 +29,11 @@ class UserController extends Controller
         return redirect()->route('index');
     }
 
-    public function handleLogin(Request $request)
+    public function handleLogin(LoginRequest $request)
     {
-        $request->validate([
-            'email' => 'required|string|email|max:255',
-            'password' => 'required|string'
-        ]);
+        $validated = $request->validated();
 
-        if (Auth::attempt($request->only('email', 'password'))){
+        if (Auth::attempt($validated)){
             return redirect()->route('index');
         } else {
             return redirect()->back();
