@@ -10,7 +10,7 @@
                     <img src="{{ '/storage/images/'.$post->image }}" class="img-fluid rounded mb-4"
                          alt="Image for Example Blog Post Title">
                     <div class="mb-4">
-                        <span class="text-muted">{{ date('Y-m-d', strtotime($post->created_at)).' '. $post->user->username }}</span>
+                        <span class="text-muted">{{ date('Y-m-d', strtotime($post->created_at)).' '. $post->users->username }}</span>
                     </div>
                     <div class="content">
                         <p>{{ $post->content }}</p>

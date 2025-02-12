@@ -18,7 +18,7 @@
                             @endif
                         </div>
                         <div class="card-footer text-muted">
-                            {{ $post->user->username }}
+                            {{ $post->user->username}}
                         </div>
                     </div>
                 @empty
